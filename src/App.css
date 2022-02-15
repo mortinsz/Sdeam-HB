@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+/*  COLORS */
+/* $color-grey: #7A7F86; */
+/* $color-: #4E64F9; */
+/* $color-: #FFD54F; */
+/* $color-: #E4E2E2; */
+/* $color-greyLight: #E4E2E2; */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul, li{
+  list-style: none;
+  display: inline-block;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
+  color: inherit;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  max-width: 1360px;
+  margin: 0 auto;
 }
