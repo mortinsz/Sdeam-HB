@@ -1,0 +1,19 @@
+$color-gray: #8291A3;
+.main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: fit-content;
+}
+.logoTitle{
+    text-transform: uppercase;
+    color: $color-gray;
+    font-weight: 500;
+    font-size: 12px;
+}
+.companyInfo{
+    color: $color-gray;
+    font-weight: 400;
+    font-size: 11px;
+}

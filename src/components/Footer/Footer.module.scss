@@ -1,0 +1,13 @@
+.main{
+    width: 100%;
+    padding: 39px 0px 49px;
+    &__inner{
+        display: grid;
+        grid-gap: 72px;
+        grid-template-columns: 1fr 4fr;
+    }
+}
+.column{
+    display: grid;
+    grid-gap: 42px;
+}

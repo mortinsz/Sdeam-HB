@@ -1,0 +1,27 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+.socials{
+    display: flex;
+    align-items: center;
+}
+.title{
+    margin-right: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E2123;
+}
+.pay{
+    display: flex;
+    align-items: center;
+}
+.linkSocial{
+    margin-right: 15px;
+    &:hover path{
+        fill: #664EF9;
+    }
+}
+.linkPay{
+    margin-right: 15px;
+}

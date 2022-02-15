@@ -46,7 +46,7 @@ function Bottom(props) {
         <NavLink to={hb.link} className={s.menulink}>
             <div className={s.linktext}>{hb.name}</div>
             <div className={`${hb.classNameSvg && s.linksvg}`}>
-                <Svg id={hb.svg} />
+                <Svg type={hb.svg} />
             </div>
         </NavLink>
       </li>)
