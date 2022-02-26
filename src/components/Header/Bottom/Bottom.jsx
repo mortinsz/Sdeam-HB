@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import Button from '../../Button/Button';
+import PerpleBtn from '../../Buttons/PerpleBtn/PerpleBtn';
 import Svg from '../../Svgs/Svg';
 import s from './Bottom.module.scss';
 
@@ -9,30 +9,28 @@ function Bottom(props) {
     logo: '../assets/images/logo.png',
     nav: [
       {
+        id: '1',
         name: 'Квартиры на сутки',
         link: '/',
         svg: 'map',
         classNameSvg: true
       },
       {
+        id: '2',
         name: 'Коттеджи и усадьбы',
         link: "/",
         svg: '',
         classNameSvg: false
       },
       {
-        name: 'Коттеджи и усадьбы',
-        link: "/",
-        svg: '',
-        classNameSvg: false
-      },
-      {
+        id: '3',
         name: 'Бани и Сауны',
         link: "/",
         svg: '',
         classNameSvg: false
       },
       {
+        id: '4',
         name: 'Авто напрокат',
         link: "/",
         svg: '',
@@ -42,11 +40,11 @@ function Bottom(props) {
     buttom: '+ Разместить объявление'
   }
   let navBottom = headerBottom.nav.map( hb => 
-     <li className={s.link}>
+     <li className={s.link} key={hb.id}>
         <NavLink to={hb.link} className={s.menulink}>
             <div className={s.linktext}>{hb.name}</div>
             <div className={`${hb.classNameSvg && s.linksvg}`}>
-                <Svg type={hb.svg} />
+                <Svg type={hb.svg} key={hb.id} svgClass={s.svg}/>
             </div>
         </NavLink>
       </li>)
@@ -60,7 +58,7 @@ function Bottom(props) {
         <ul className={s.list}>
           {navBottom}
         </ul>
-        <Button title={headerBottom.buttom}/>
+        <PerpleBtn title={headerBottom.buttom}/>
       </div>
     </div>
   </div>

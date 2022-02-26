@@ -7,33 +7,39 @@ function FooterMenuFlat() {
     title: 'Квартиры',
     flats: [
       {
+        id: '1',
         title: 'Квартиры в Минске',
         link: '/'
       },
       {
+        id: '2',
         title: 'Квартиры в Гомеле',
         link: '/'
       },
       {
+        id: '3',
         title: 'Квартиры в Бресте',
         link: '/'
       },
       {
+        id: '4',
         title: 'Квартиры в Витебске',
         link: '/'
       },
       {
+        id: '5',
         title: 'Квартиры в Гродно',
         link: '/'
       },
       {
+        id: '6',
         title: 'Квартиры в Могилеве',
         link: '/'
       },
     ]
   }
   let flatsList = footerMenuFlat.flats.map(fl => 
-        <li className={s.link}>
+        <li className={s.link} key={fl.id}>
           <NavLink to={fl.link} className={s.navlink}>{fl.title}</NavLink>
         </li>
     )

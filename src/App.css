@@ -3,6 +3,7 @@
 /* $color-grey: #7A7F86; */
 /* $color-: #4E64F9; */
 /* $color-: #FFD54F; */
+/* $color-black: #1E2123; */
 /* $color-: #E4E2E2; */
 /* $color-greyLight: #E4E2E2; */
 *{
@@ -21,9 +22,13 @@ a{
 }
 body{
   height: 100%;
+  color: #1E2123;
 }
 .container{
-  max-width: 1360px;
+  max-width: 1280px;
   margin: 0 auto;
+}
+#root{
+  overflow: hidden;
 }
 

@@ -1,7 +1,10 @@
+.main{
+    margin: 0px 97px 0px 70px;
+}
 .list{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-height: 67px;
+    max-height: 95px;
     grid-column-gap: 50px;
 }
 .title{
@@ -15,6 +18,7 @@
     margin-bottom: 8px;
     transition: all 0.3s;
     font-size: 14px;
+    line-height: 17px;
     &:hover{
         color: #1E2123;
     }

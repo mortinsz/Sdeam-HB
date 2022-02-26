@@ -3,7 +3,7 @@
 }
 .main_inner{
     width: 100%;
-    padding: 12px 40px 3px;
+    padding: 12px 00px 3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,6 +50,9 @@
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
     padding-bottom: 9px;
+    &_title{
+        font-size: 14px;
+    }
 }
 
 .bookmark_svg{
@@ -65,4 +68,5 @@
     color: #664EF9;
     font-weight: 500;
     margin-left: 40px;
+    font-size: 14px;
 }

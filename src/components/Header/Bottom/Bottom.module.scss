@@ -6,16 +6,14 @@ $color-black: #1E2123;
         width: 100%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         padding: 11px 0px;
     }
 }
 .list{
-    max-width: 745px;
-    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 0px 92px 0px 84px;
 }
 .nav{
     width: 100%;
@@ -30,14 +28,13 @@ $color-black: #1E2123;
     font-weight: 600;
     cursor: pointer;
     padding-bottom: 12px;
-
+    margin-right: 80px;
+    &:last-child{
+        margin: 0;
+    }
 }
 
-.linksvg{
-    width: 8px;
-    height: 10px;
-    margin-left: 5px;
-}
+
 .linktext{
     font-size: 14px;
 }
@@ -50,4 +47,9 @@ $color-black: #1E2123;
     fill: #FFD54F;
     padding-bottom: 9px;
 
+}
+.svg{
+    height: 15px;
+    width: auto;
+    margin-left: 15px;
 }

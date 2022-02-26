@@ -10,35 +10,35 @@ function Top() {
             {
                 id: 1,
                 name: 'Главная',
-                link: '/Main',
+                link: '/main',
                 svg: '',
                 classNameSvg: false
             },
             {
                 id: 2,
                 name: 'Новости',
-                link: '/News',
+                link: '/news',
                 svg: '',
                 classNameSvg: false
             },
             {
                 id: 3,
                 name: 'Размещение и тарифы',
-                link: '/Rate',
-                svg: 'map',
-                classNameSvg: true
+                link: '/rate',
+                svg: '',
+                classNameSvg: false,
             },
             {
                 id: 4,
                 name: 'Объявления на карте',
-                link: '/Main',
-                svg: '',
-                classNameSvg: false
+                link: '/map',
+                svg: 'map',
+                classNameSvg: true
             },
             {
                 id: 5,
-                name: 'Главная',
-                link: '/Main',
+                name: 'Контакты',
+                link: '/contacts',
                 svg: '',
                 classNameSvg: false
             }
@@ -51,7 +51,7 @@ function Top() {
 
     let navTop = headerTop.nav.map( ht => 
         <li className={s.link} key={ht.id}>
-            <NavLink to={ht.link} className={s.menulink}>
+            <NavLink to={ht.link} className={s.menulink} >
                 <div className={`${ht.classNameSvg && s.linksvg}`} >
                     <Svg type={ht.svg}/>
                 </div>

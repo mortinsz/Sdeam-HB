@@ -1,0 +1,15 @@
+.main{
+    width: fit-content;
+    padding: 10px 15px;
+    color: #664EF9;
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(102, 78, 249, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 17px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background: rgba(102, 78, 249, 0.1);
+    }
+}
