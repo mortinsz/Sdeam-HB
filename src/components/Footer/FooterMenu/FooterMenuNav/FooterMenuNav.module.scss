@@ -1,0 +1,18 @@
+$color-black: #1E2123;
+.list{
+    display: flex;
+    flex-direction: column;
+}
+.link{
+     margin-bottom: 21px;
+     
+}
+.navlink{
+    font-weight: 700;
+    font-size: 14px;
+    color: $color-black; 
+    transition: all 0.3s;
+    &:hover{
+        color: #664EF9;
+    }
+}
