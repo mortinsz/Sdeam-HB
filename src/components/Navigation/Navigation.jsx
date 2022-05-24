@@ -1,12 +1,13 @@
-import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 import s from './Navigation.module.scss'
 
 function Navigation(props) {
 
   return (
     <div className={s.main}>
-        <Breadcrumbs breadcrumbs={props.breadcrumbsNav}/>
-         <h1 className={`${s.title +' '+ props.class}`}>{props.title}</h1>
+          <ul className={props.breadClass}>
+            {props.breadcrumbsNav}
+          </ul>
+         <h1 className={`${s.title +' '+ props.nameClass}`}>{props.title}</h1>
     </div>
   )
 }

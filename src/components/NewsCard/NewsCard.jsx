@@ -1,4 +1,5 @@
-import LightPerpleBtn from '../Buttons/LightPerpleBtn/LightPerpleBtn'
+import Button from '../Button/Button'
+import { NavLink } from 'react-router-dom'
 import Date from '../Date/Date'
 import s from './NewsCard.module.scss'
 
@@ -10,8 +11,8 @@ function NewsCard(props) {
             <div className={s.title}>{props.title}</div>
             <div className={s.description}>{props.description}</div>
             <div className={s.more}>
-                <Date date={props.date} class={s.geyDate}/>
-                <LightPerpleBtn text={props.text}/>
+                <Date date={props.date} nameClass={s.geyDate}/>
+                <NavLink to={props.linkTo}><Button title='Читать' classname={`${s.button}`}/></NavLink>
             </div>
         </div>
     </div>

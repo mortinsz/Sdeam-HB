@@ -33,3 +33,13 @@
     border-bottom: 2px solid #F8F8F8;
     padding-bottom: 25px;
 }
+.button{
+    padding: 10px 15px;
+    color: #664EF9;
+    background: rgba(102, 78, 249, 0.1);
+    font-size: 14px;
+
+    &:hover{
+        background: rgba(102, 78, 249, 0.1);
+    }
+}

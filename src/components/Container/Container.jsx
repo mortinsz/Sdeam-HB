@@ -1,8 +1,8 @@
 import s from './Container.module.scss'
-function Container() {
+function Container(props) {
   return (
     <div className={s.main}>
-      
+      {props.children}
     </div>
   )
 }

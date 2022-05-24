@@ -1,8 +1,11 @@
+import {useState ,useEffect} from 'react'
+import Container from '../../Container/Container'
 import Navigation from '../../Navigation/Navigation'
 import NewsCard from '../../NewsCard/NewsCard'
 import Search from '../../Search/Search'
 import Svg from '../../Svgs/Svg'
 import s from './News.module.scss'
+import {data} from '../../../data'
 
 function News(props) {
     const news = {
@@ -39,7 +42,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '2',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -48,7 +51,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '3',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -57,7 +60,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '4',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -66,7 +69,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '5',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -75,7 +78,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '6',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -84,7 +87,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '7',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -93,7 +96,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '8',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -102,7 +105,7 @@ function News(props) {
                 btnText: 'Читать'
             },
             {
-                id: '1',
+                id: '9',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
                 title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
@@ -112,6 +115,12 @@ function News(props) {
             },
         ],
     }
+
+    const [newsPost, setNewsPost] = useState([])
+
+    useEffect(() => {
+        setNewsPost(data)
+    }, [])
 
     let breadcrumbsItems = news.navigation.breadcrumbs.map( bc =>
         <li className={s.linkCrumb} key={bc.id}>
@@ -123,21 +132,22 @@ function News(props) {
     )
 
     let articles = news.articles.map( ar =>
-        <NewsCard title={ar.title} scrImg={ar.scrImg} description={ar.description} text={ar.btnText} date={ar.date}/>
+        <NewsCard linkTo={`/news/${ar.id}`} key={ar.id} title={ar.title} scrImg={ar.scrImg} description={ar.description} text={ar.btnText} date={ar.date}/>
     )
 
   return (
     <div className={s.main}>
-        <div className="container">
+        <Container>
             <div className={s.navigation}>
-                <Navigation breadcrumbsNav={breadcrumbsItems} class={s.nameTitle} title={news.navigation.title}/>
+                <Navigation breadcrumbsNav={breadcrumbsItems} nameClass={s.nameTitle} title={news.navigation.title}/>
                 <Search title={news.search.searchTitle}/>
             </div>
             <div className={s.articles}>
                 {articles}
             </div>
+            {/* TODO сделать пагинацию */}
             <div className={s.pages}>1 2 3 4 5 6 7 ... 11</div>
-        </div>
+        </Container>
     </div>
   )
 }

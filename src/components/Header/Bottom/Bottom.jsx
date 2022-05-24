@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import PerpleBtn from '../../Buttons/PerpleBtn/PerpleBtn';
+import Button from '../../Button/Button';
 import Svg from '../../Svgs/Svg';
 import s from './Bottom.module.scss';
 
@@ -58,7 +58,7 @@ function Bottom(props) {
         <ul className={s.list}>
           {navBottom}
         </ul>
-        <PerpleBtn title={headerBottom.buttom}/>
+        <Button title={headerBottom.buttom} classname={`${s.button}`}/>
       </div>
     </div>
   </div>

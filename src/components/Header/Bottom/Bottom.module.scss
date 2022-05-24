@@ -53,3 +53,11 @@ $color-black: #1E2123;
     width: auto;
     margin-left: 15px;
 }
+.button{
+    padding: 10px 18px;
+    background: linear-gradient(90deg, #9D94FF 0%, #6B50E9 94.5%);
+    color: #fff;
+    &:hover{
+        background: linear-gradient(90deg, #867CFC 0%, #6929F3 94.5%);
+    }
+}

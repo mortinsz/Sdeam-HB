@@ -10,7 +10,7 @@ function Top() {
             {
                 id: 1,
                 name: 'Главная',
-                link: '/main',
+                link: '/',
                 svg: '',
                 classNameSvg: false
             },
@@ -73,7 +73,7 @@ function Top() {
                             <img src="../assets/images/heart.png" alt="Закладки" />
                         </NavLink>
                     </div> 
-                    <NavLink to='/' className={s.regist}>Вход и регистрация</NavLink>
+                    <NavLink to='/login' className={s.regist}>Вход и регистрация</NavLink>
                 </div>
             </div>
         </div>

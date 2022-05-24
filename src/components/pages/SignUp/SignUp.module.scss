@@ -1,0 +1,353 @@
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-image:  url('../../../../public/assets/images/back.png'), linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
+}
+.block{
+    position: absolute;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    max-width: 844px;
+    width: 100%;
+    max-height: 536px;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 6;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.formSide{
+    max-width: 306px;
+    width: 100%;
+    margin-right: 50px; 
+}
+.textSide{
+    max-width: 388px;
+    width: 100%;  
+}
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.commitTitle, .list{
+    font-size: 14px;
+    color: #686868;
+}
+.listItem{
+    position: relative;
+    margin-left: 12px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        left: -10px;
+        top: 8px;
+        background-color: #686868;
+    }
+}
+.title{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.subtitle{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #686868;
+    margin: 15px 0px 35px;
+}
+.input{
+    padding: 15px 20px 15px 55px;
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    
+    &:placeholder{
+        color: #686868;
+        font-size: 14px;
+    }
+    &:focus{
+        outline: 3px #6540CD solid;
+    }
+}
+
+.emailOut{
+    position: relative;
+    width: 100%;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/email.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.emailOnFocuse{
+    position: relative;
+    width: 100%;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/emailColor.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.loginOut{
+    position: relative;
+    width: 100%;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/user2.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.loginOnFocuse{
+    position: relative;
+    width: 100%;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/user1.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.passwordOut{
+    position: relative;
+    width: 100%;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/password1.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.passwordOnFocuse{
+    position: relative;
+    width: 100%;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/password2.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+
+
+.againPasswordOut{
+    position: relative;
+    width: 100%;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/password1.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.againPasswordOnFocuse{
+    position: relative;
+    width: 100%;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../../public/assets/svg/password2.svg);
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+}
+.checkbox{
+    box-shadow: none;
+    width: 0;
+    &:checked + label{
+
+        transition: all 0.3s;
+        background-color: #6540CD;
+
+        &:before{
+            content: "";
+            margin-left: 13px;
+            transition: all 0.3s;
+            border-radius: 50%;
+            
+        }
+
+    }
+}
+.checkboxLable{
+    position: relative;
+    width: 34px;
+    height: 20px;
+    background-color: #EBEAEA;
+    border-radius: 100px;
+    transition: all 0.3s;
+    
+    &:after {
+        content: "Запомнить меня";
+        margin-left: 42px;
+        color: #686868;
+        font-size: 14px;
+        position: fixed;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        transition: all 0.3s;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.lastLine{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0% 60% 40%;
+}
+.forgetPassword{
+    font-size: 14px;
+    color: #6540CD;
+    font-weight: 500;
+    text-align: end;
+}
+
+.btnSubmit{
+    background-color: #FFD54F;
+    width: 100%;
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 33px;
+    height: 48px;
+    margin-top: 34px;
+    cursor: pointer;
+}
+.errorBlock{
+    background-color: #EB5757;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 33px;
+    height: 48px;
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        margin-left: 15px;
+    }
+    path{
+        fill: rgba(255, 255, 255, 0.500);
+    }
+}
+.ask{
+    font-size: 14px;
+    color: #686868;
+    margin-top: 50px;
+}
+
+.askLink{
+    font-weight: 600;
+    color: #6540CD;
+}
+.errorMessage{
+    font-size: 13px;
+    color: #ba0000;
+    padding-top: -20px;
+}
+.errorClass{
+        position: relative;
+        width: 100%;
+    
+        &::before{
+            content: "";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background-image: url(../../../../public/assets/svg/errorSign.svg);
+            background-repeat: no-repeat;
+            z-index: 5;
+        }
+        input{
+            outline: 2px #ba0000 solid;
+
+        }
+
+}
