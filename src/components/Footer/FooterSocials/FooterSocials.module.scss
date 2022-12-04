@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 69px;
+}
+.socials{
+    display: flex;
+    align-items: center;
+}
+.title{
+    margin-right: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E2123;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.pay{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.linkPay{
+    margin-right: 15px;
+}

@@ -1,0 +1,128 @@
+.main{
+    background-color: #F8F8F8;
+    padding: 0px 10px;
+
+}
+.main_inner{
+    width: 100%;
+    padding: 12px 00px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav{
+    width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 724px;
+     @media (max-width: 992px) {
+        display: none;
+    }
+}
+.link{
+    color: #8291A3;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    padding-bottom: 9px;
+    font-weight: 400;
+
+}
+.link:hover, .link.active, .menulink:hover path, .bookmark:hover, .bookmark.active{ 
+    padding-bottom: 9px;
+    border-bottom: 3px solid #FFD54F;
+    color: #1E2123;
+    fill: #1E2123;
+}
+.linksvg{
+    width: 8px;
+    height: 10px;
+    margin-right: 5px;
+}
+.menulink{
+    display: flex;
+    align-items:flex-start;
+    font-size: 14px;
+}
+.user{
+    display: flex;
+    margin-left: 20px;
+    
+}
+.bookmark{
+    color: #8291A3;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    padding-bottom: 9px;
+    &_title{
+        font-size: 14px;
+    }
+}
+
+.bookmark_svg{
+    margin-left: 11px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.linksvg path{
+    fill: #8291A3;
+}
+.regist{
+    color: #664EF9;
+    font-weight: 500;
+    margin-left: 40px;
+    font-size: 14px;
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+.registSvg{
+    margin-left: 40px;
+    display: none;
+    svg{
+        fill: var(--c-perple);
+        width: 20px;
+        height: 20px;   
+    }
+    @media (max-width: 992px) {
+        display: block;
+    }
+}
+
+
+.burger{
+    display: none;    
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--c-grey);
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -1px;
+        height: 3px;
+        background-color: var(--c-grey);
+    }
+    span{
+        position: absolute;
+        width: 100%;
+        top: 43%;
+        height: 2px;
+        background-color: var(--c-grey);  
+    }
+    @media (max-width: 992px) {
+        display: block;
+        position: relative;
+        height: 18px;
+        width: 20px;
+    }
+}

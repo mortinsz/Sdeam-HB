@@ -1,0 +1,29 @@
+.main{
+    margin: 0px 97px 0px 70px;
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 95px;
+    grid-column-gap: 50px;
+
+}
+.title{
+    margin-bottom: 10px;
+    color: #1E2123;
+    font-weight: 700;
+    font-size: 14px;
+}
+.link{
+    color: #8291A3;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+    font-size: 14px;
+    line-height: 17px;
+    &:hover{
+        color: #1E2123;
+    }
+}

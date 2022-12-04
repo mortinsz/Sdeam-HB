@@ -1,0 +1,108 @@
+.main{
+    position: relative;
+    background-image:  url('../../../../public/assets/images/back.png'), linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
+}
+.yellowSvg{
+    align-self: flex-start;
+    margin-top: 20px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.whiteSvg{
+    align-self: flex-end;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.yellowSvg circle{
+    fill: #FFD54F;
+}
+.whiteSvg circle{
+    fill: #fff;
+    align-self: flex-end;
+
+}
+.button{
+    padding: 12px 24px;
+    color: #000;
+    background-color: #FFD54F;
+    font-size: 16px;
+    border-radius: 33px;
+    font-weight: 700;
+
+    path{
+        fill: #000;
+    }
+    svg{
+        margin-right: 10px;
+    }
+    &:hover{
+        background-color: #FEC100;
+    }
+    @media (max-width: 972px) {
+        font-size: 13px;
+    }
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    @media (max-width: 972px) {
+        margin: 0;
+    }
+    @media (max-width: 768px) {
+        min-height: 400px;
+        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+.title{
+    color: #fff;
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 10px;
+    line-height: 73px;
+    @media (max-width: 972px) {
+        font-size: 30px;
+    }
+}
+.description{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 40px;
+    @media (max-width: 972px) {
+        font-size: 16px;
+    }
+}
+.number{
+    display: flex;
+    flex-direction: column;
+}
+.errorNum{
+    font-size: calc(135px + 147  * ((100vw - 320px) / (1280 - 320)));
+    // font-size: 282px;    
+    opacity: 0.35;
+    color: #fff;
+    font-weight: 700;
+    padding-right: 44px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.info{
+    max-width: 410px;
+    margin-right: 60px;
+}

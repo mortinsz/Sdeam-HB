@@ -1,0 +1,49 @@
+/*  COLORS */
+/* $color-grey: #7A7F86; */
+/* $color-: #4E64F9; */
+/* $color-perpleHover: #664EF9; */
+/* $color-yellow: #FFD54F; */
+/* $color-yellowHover: #FEC100; */
+/* $color-black: #1E2123; */
+/* $color-: #E4E2E2; */
+/* $color-greyLight: #E4E2E2; */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+ul, li{
+  list-style: none;
+  display: inline-block;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  color: #1E2123;
+}
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+#root{
+  overflow: hidden;
+}
+input{
+  border: none;
+  background: none;
+}
+button{
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.swiper-side{
+  width: 100%;
+}

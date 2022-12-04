@@ -1,0 +1,16 @@
+.input{
+    padding: 15px 20px 15px 55px;
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    
+    &:placeholder{
+        color: #686868;
+        font-size: 14px;
+    }
+    &.touched{
+        outline: 3px #6540CD solid;
+    }
+}

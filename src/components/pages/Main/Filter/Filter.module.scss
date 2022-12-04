@@ -1,0 +1,89 @@
+.filter{
+    width: 100%;
+    padding: 0px 110px;
+}
+.filterChoose{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px 10px 10px 10px;
+    padding: 15px 20px;
+}
+.label{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #BDBDBD;
+    margin-bottom: 15px;
+}
+.filterSelect{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btnActive{
+    background-color: #fff;
+    color: #664EF9;
+    border: none;
+    padding: 13px 20px;
+    transition: all 0.3s;
+    font-weight: 600;
+    border-radius: 10px 10px 0px 0px;
+}
+.btnInactive{
+    padding: 13px 20px;
+    color: #fff;
+    transition: all 0.3s;
+    border: none;
+    font-weight: 600;
+    background: rgba(45, 57, 136, 0.5);
+
+    &:first-child{
+        border-radius: 10px 0px 0px 0px;
+    }
+     &:last-child{
+        border-radius: 0px 10px 0px 0px;
+    }
+}
+.range{
+    max-width: 175px;
+    display: flex;
+}
+.inputRange{
+    width: 70px;
+}
+
+.moreOptionBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    svg{
+        margin-left: 4px;
+        path{
+            fill: #664EF9;
+        }
+    }
+}
+.submit{
+    padding: 10px 16px;
+    background-color: #FFD54F;
+    border-radius: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: #FEC100;
+    }
+    svg{
+        transform: rotate(-90deg);
+        path{
+            stroke: #000;
+        }
+    }
+}
