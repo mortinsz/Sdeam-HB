@@ -6,8 +6,27 @@ import Search from '../../Search/Search'
 import Svg from '../../Svgs/Svg'
 import s from './News.module.scss'
 import {data} from '../../../data'
+import usePagination from '../../../hooks/usePagination'
+
 
 function News(props) {
+
+
+    const {
+        firstContentIndex,
+        lastContentIndex,
+        nextPage,
+        prevPage,
+        page,
+        setPage,
+        totalPages,
+      } = usePagination({
+        contentPerPage: 6,
+        count: data.length,
+      });
+
+
+
     const news = {
         navigation: {
             title: 'Новости',
@@ -36,7 +55,7 @@ function News(props) {
                 id: '1',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
-                title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
+                title: `Линия Сталина: суровый отдых в усадьбах на сутки`,
                 description: 'Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А...',
                 date: '14 Января 2008',
                 btnText: 'Читать'
@@ -45,7 +64,7 @@ function News(props) {
                 id: '2',
                 scrImg: '../assets/images/CardImg.png',
                 alt: 'card',
-                title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
+                title: `Линия Сталина: суровый отдых в усадьбах на сутки `,
                 description: 'Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А...',
                 date: '14 Января 2008',
                 btnText: 'Читать'
@@ -131,10 +150,13 @@ function News(props) {
         </li>
     )
 
-    let articles = news.articles.map( ar =>
+    let articles = news.articles
+    .slice(firstContentIndex, lastContentIndex)
+    .map( ar =>
         <NewsCard linkTo={`/news/${ar.id}`} key={ar.id} title={ar.title} scrImg={ar.scrImg} description={ar.description} text={ar.btnText} date={ar.date}/>
     )
 
+    console.log(data)
   return (
     <div className={s.main}>
         <Container>
@@ -142,11 +164,21 @@ function News(props) {
                 <Navigation breadcrumbsNav={breadcrumbsItems} nameClass={s.nameTitle} title={news.navigation.title}/>
                 <Search title={news.search.searchTitle}/>
             </div>
-            <div className={s.articles}>
+            <div className={s.articles}>    
                 {articles}
             </div>
             {/* TODO сделать пагинацию */}
-            <div className={s.pages}>1 2 3 4 5 6 7 ... 11</div>
+            <div className={s.pagination}>
+                {[...Array(totalPages).keys()].map((el) => (
+                    <button
+                    onClick={() => setPage(el + 1)}
+                    key={el}
+                    className={`${s.page} ${page === el + 1 ? s.active : s.none}`}
+                    >
+                    {el + 1}
+                    </button>
+                ))}
+            </div>
         </Container>
     </div>
   )

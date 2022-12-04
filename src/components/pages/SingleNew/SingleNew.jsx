@@ -1,6 +1,4 @@
 import s from './SingleNew.module.scss'
-import {useParams} from 'react-router-dom'
-import {useState, useEffect} from 'react'
 import Navigation from '../../Navigation/Navigation'
 import Svg from '../../Svgs/Svg'
 import Container from '../../Container/Container'
@@ -12,7 +10,8 @@ import {
   TelegramShareButton,
   WhatsappShareButton,
 } from "react-share";
-import NewsCard from '../../NewsCard/NewsCard'
+import 'swiper/css';
+import SwiperCard from '../../SwiperCard/SwiperCard'
 
 function SingleNew() {
   const singleNew = {
@@ -87,9 +86,7 @@ function SingleNew() {
         </a>
     </li>
 )
-let articles = singleNew.articles.map( ar =>
-  <NewsCard linkTo={`/news/${ar.id}`} key={ar.id} title={ar.title} scrImg={ar.scrImg} description={ar.description} text={ar.btnText} date={ar.date}/>
-)
+
 
   return (
     <div className={s.main}>
@@ -170,9 +167,7 @@ let articles = singleNew.articles.map( ar =>
           <div className={s.readMore}>
             <Container>
               <div className={s.titleReaddMore}>Читайте также</div>
-              <div className={s.cards}>
-                {articles}
-              </div>
+              <SwiperCard/>
             </Container>
           </div>
       </div>

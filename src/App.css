@@ -1,7 +1,9 @@
 /*  COLORS */
 /* $color-grey: #7A7F86; */
 /* $color-: #4E64F9; */
-/* $color-: #FFD54F; */
+/* $color-perpleHover: #664EF9; */
+/* $color-yellow: #FFD54F; */
+/* $color-yellowHover: #FEC100; */
 /* $color-black: #1E2123; */
 /* $color-: #E4E2E2; */
 /* $color-greyLight: #E4E2E2; */
@@ -32,12 +34,16 @@ body{
 }
 #root{
   overflow: hidden;
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
 }
 input{
   border: none;
   background: none;
+}
+button{
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.swiper-side{
+  width: 100%;
 }

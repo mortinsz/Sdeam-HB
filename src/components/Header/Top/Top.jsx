@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import Svg from '../../Svgs/Svg'
 import s from './Top.module.scss'
+import { BsPersonCircle } from 'react-icons/bs';
+import PopupMenu from '../../PopupMenu/PopupMenu';
 
 function Top() {
 
+    const [popopen, setPopopen] = useState(false)
+ 
+    const popupOpen = () => {
+        if(popopen === true) {
+            setPopopen(false);
+        }
+        else if(popopen === false){
+            setPopopen(true);
+        }
+    }
     const headerTop = {
         nav: [
             {
@@ -17,7 +29,7 @@ function Top() {
             {
                 id: 2,
                 name: 'Новости',
-                link: '/news',
+                link: '/',
                 svg: '',
                 classNameSvg: false
             },
@@ -59,23 +71,34 @@ function Top() {
             </NavLink>
         </li>
          )
+    const closeNav = () => {
+        setPopopen(false)
+    }
   return (
     <div className={s.main}>
         <div className="container">
             <div className={s.main_inner}>
+                <button 
+                className={s.burger} 
+                onClick={popupOpen}
+                >
+                    <span></span>
+                </button>
                 <ul className={s.nav}>
                     {navTop}
                 </ul>
                 <div className={s.user}>
-                    <div className={s.bookmark}>
+                    <div className={s.bookmark} onClick={closeNav}>
                         <NavLink to="/"className={s.bookmark_title}>Закладки</NavLink>
                         <NavLink to='/'className={s.bookmark_svg}>
                             <img src="../assets/images/heart.png" alt="Закладки" />
                         </NavLink>
                     </div> 
                     <NavLink to='/login' className={s.regist}>Вход и регистрация</NavLink>
+                    <NavLink to='/login' className={s.registSvg} onClick={closeNav}><BsPersonCircle/></NavLink>
                 </div>
             </div>
+            <PopupMenu popopen={popopen}/>
         </div>
     </div>
   )

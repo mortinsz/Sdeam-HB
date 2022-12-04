@@ -11,28 +11,28 @@ function Bottom(props) {
       {
         id: '1',
         name: 'Квартиры на сутки',
-        link: '/',
+        link: '/KvtoDay',
         svg: 'map',
         classNameSvg: true
       },
       {
         id: '2',
         name: 'Коттеджи и усадьбы',
-        link: "/",
+        link: "/Houses",
         svg: '',
         classNameSvg: false
       },
       {
         id: '3',
         name: 'Бани и Сауны',
-        link: "/",
+        link: "/Saunas",
         svg: '',
         classNameSvg: false
       },
       {
         id: '4',
         name: 'Авто напрокат',
-        link: "/",
+        link: "/Cars",
         svg: '',
         classNameSvg: false
       }
@@ -40,7 +40,7 @@ function Bottom(props) {
     buttom: '+ Разместить объявление'
   }
   let navBottom = headerBottom.nav.map( hb => 
-     <li className={s.link} key={hb.id}>
+     <li className={s.linkBold} key={hb.id}>
         <NavLink to={hb.link} className={s.menulink}>
             <div className={s.linktext}>{hb.name}</div>
             <div className={`${hb.classNameSvg && s.linksvg}`}>

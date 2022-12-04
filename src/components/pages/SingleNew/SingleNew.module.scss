@@ -32,26 +32,44 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+        @media (max-width: 768px){
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
 }
 .nameTitle{
     margin-bottom: 30px;
+    @media (max-width: 768px){
+        margin-bottom: 8px;
+    }
 }
 .breadClass{
     margin-bottom: 30px;
     margin-top: 25px;
+    @media (max-width: 768px){
+        font-size: 11px;
+    }
 }
 .socials{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 768px){
+        align-self: flex-end;
+    }
 }
 .listOfSocials{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .name{
     margin-right: 15px;
+    @media (max-width: 768px){
+        font-size: 11px;
+
+    }
 }
 .socialBlock{
     width: 35px;
@@ -63,6 +81,15 @@
     justify-content: center;
     background-color: rgba(102, 78, 249, 0.1);
     border-radius: 50%;
+    @media (max-width: 768px){
+        width: 30px;
+        height: 30px;
+        display: grid;
+        &:last-child{
+            display: none;
+        }
+
+    }
 }
 .linkCrumb{
     margin-left: 17px;
@@ -121,6 +148,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+    padding: 0px 5px;
+    @media (max-width: 768px){
+        font-size: 13px;
+    }
 }
 .readMore{
     position: relative;
@@ -149,4 +180,7 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 100px;
+}
+.swiperB{
+    padding-bottom: 30px;
 }

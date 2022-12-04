@@ -1,11 +1,15 @@
 .main{
     margin: 0px 97px 0px 70px;
+    @media (max-width: 992px) {
+        display: none;
+    }
 }
 .list{
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-height: 95px;
     grid-column-gap: 50px;
+
 }
 .title{
     margin-bottom: 10px;

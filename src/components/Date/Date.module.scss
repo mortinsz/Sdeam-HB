@@ -5,4 +5,7 @@
     line-height: 17px;
     border-radius: 18px;
     width: fit-content;
+    @media (max-width: 768px){
+        font-size: 11px;
+    }
 }

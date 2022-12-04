@@ -2,7 +2,9 @@ import {useState} from 'react'
 import s from './SignUp.module.scss'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import {NavLink} from 'react-router-dom'
-import Svg from '../../Svgs/Svg';
+import BasicForms from '../../../elements/BasicForms'
+import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from "react-router-dom";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -17,6 +19,28 @@ function SignUp() {
   const [errorClass, setErrorClass] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   
+  // config
+  const [visible, setVisible] = useState(false)
+
+  // navigation to finish registration
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `RegistFinish`; 
+    navigate(path);
+  }
+  // add capcha
+  function capchOnChange(value) {
+    console.log("Captcha value:", value);
+  }
+
+  const visibleText = () => {
+    if(visible){
+      setVisible(false)
+    }
+    else{
+      setVisible(true)
+    }
+  }
   
   return (
     <div className={s.main}>
@@ -28,92 +52,76 @@ function SignUp() {
               login: '',
               email: '',
               password: '',
-              againPassword: '',
+              confirmPassword: '',
             }}
-            validate={values => {
-              const errors = {};
-              if (!values.email || !values.login || !values.password || !values.againPassword) {
-                
-                setErrorSign(true);
-                setErrorClass(true);
-                console.log('errooor')
-
-              } else if (
-                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                  
-                  setErrorSign(true);
-              } else if (values.passwordValue !== values.againPasswordValue){
-                
-                setErrorSign(true);
-
-              }else{
-                setErrorSign(false);
-                setErrorClass(false);
-              }
-              return errors;
-
-            }}
+            validate={BasicForms}
             onSubmit={async (values) => {
               await sleep(500);
               alert(JSON.stringify(values, null, 2));
             }}
           >
             {({ isSubmitting }) => (
-              <Form className={s.form}>
-              <div className={loginOnFocuse ? s.loginOnFocuse : errorClass ? s.errorClass : s.loginOut}>
-                <Field  
-                  className={s.input + ' ' + s.login}
-                  type="login"
-                  name="login"
-                  placeholder="Логин"
-                  autoComplete="off"
-                  onFocus={() => setLoginOnFocuse(true)}
-                  onBlur={() => setLoginOnFocuse(false)}/>
-              </div>
-                <ErrorMessage className={s.errorMessage} name="email" component="p"/>
-
-                <div className={emailOnFocuse ? s.emailOnFocuse : errorClass ? s.errorClass : s.emailOut}>
-                <Field  
-                  className={s.input + ' ' + s.login}
-                  type="email"
-                  name="email"
-                  placeholder="Электронная почта"
-                  autoComplete="off"
-                  onFocus={() => setEmailOnFocuse(true)}
-                  onBlur={() => setEmailOnFocuse(false)}/>
-              </div>
-
-                <div className={passwordnOnFocuse ? s.passwordOnFocuse : errorClass ? s.errorClass : s.passwordOut}>
+              <Form className={s.form} autoComplete="false">
+                <div className={loginOnFocuse ? s.loginOnFocuse : s.loginOut}>
+                    <Field  
+                      className={s.input + ' ' + s.login}
+                      type="login"
+                      name="login"
+                      placeholder="Логин"
+                      autoComplete="off"
+                      onFocus={() => setLoginOnFocuse(true)}
+                      onBlur={() => setLoginOnFocuse(false)}/>
+                  </div>
+                <div className={emailOnFocuse ? s.emailOnFocuse : s.emailOut}>
+                    <Field  
+                      className={s.input}
+                      type="email"
+                      name="email"
+                      label='email'
+                      placeholder="Электронная почта"
+                      autoComplete="off"
+                      onFocus={() => setEmailOnFocuse(true)}
+                      onBlur={() => setEmailOnFocuse(false)}/>
+                  </div>
+                <div className={passwordnOnFocuse ? s.againPasswordOnFocuse : s.passwordOut}>
                   <Field  
-                    className={s.input + ' ' + s.password}
+                    className={s.input}
                     type="password"
                     name="password"
-                    autoComplete="off"
                     placeholder="Пароль"
-                   
+                    autoComplete="off"
                     onFocus={() => setPasswordOnFocuse(true)}
                     onBlur={() => setPasswordOnFocuse(false)}/>
-                  </div>
-                  <div className={againPasswordOnFocuse ? s.againPasswordOnFocuse : errorClass ? s.errorClass : s.againPasswordOut}>
+                </div>
+                <div className={againPasswordOnFocuse ? s.againPasswordOnFocuse : s.againPasswordOut}>
                   <Field  
-                    className={s.input + ' ' + s.password}
+                    className={s.input}
                     type="password"
-                    name="againPassword"
+                    name="confirmPassword"
+                    placeholder="Пароль"
                     autoComplete="off"
-                    
-                    placeholder="Повторите пароль"
                     onFocus={() => setAgainPasswordOnFocuse(true)}
                     onBlur={() => setAgainPasswordOnFocuse(false)}/>
-                  </div>
-                  {errorSign && 
-                  <div className={s.errorBlock}>
-                      Ошибка ввода <Svg type='errorSign'/>
-                  </div>}
+                </div>
+                <ReCAPTCHA
+                  sitekey="Your client site key"
+                  onChange={capchOnChange}
+                />
+                  <div className={s.askNone}>
+                    <p className={s.askP}>Уже есть аккаунта? <NavLink to='/login' className={s.askLink}>Войдите</NavLink></p>
+                  </div>  
+                <button className={s.commimobil} onClick={visibleText}>Пользователь обязуется:</button>
+                <ul className={visible ? s.list : s.listNone}>
+                  <li className={s.listItem}> предоставлять достоверную и актуальную информацию при регистрации и добавлении объекта;</li>
+                  <li className={s.listItem}>добавлять фотографии объектов соответствующие действительности. Администрация сайта sdaem.by оставляет за собой право удалять любую информацию, размещенную пользователем, если сочтет, что информация не соответствует действительности, носит оскорбительный характер, нарушает права и законные интересы других граждан либо действующее законодательство Республики Беларусь.</li>
+                </ul>
+
                   <button
                     className={s.btnSubmit}
                     type= "submit"
-                    disabled={isSubmitting}>
+                    disabled={isSubmitting}
+                    onClick={routeChange}
+                    >
                     Зарегистрироваться
                   </button>
                   

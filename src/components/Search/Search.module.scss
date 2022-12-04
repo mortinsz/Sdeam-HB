@@ -3,6 +3,9 @@
     align-self: flex-end;
     width: 100%;
     position: relative;
+    @media (max-width: 768px) {
+        margin-top: 20px;
+    }
 }
 .searchInput{
     width: 100%;
@@ -12,6 +15,7 @@
     border-radius: 20px;
     height: 37px;
     padding-left: 21px;
+    font-size: 16px;
 }
 .button{
     width: 53px;

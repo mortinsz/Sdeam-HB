@@ -12,8 +12,8 @@
     left: 50%;
     max-width: 844px;
     width: 100%;
-    max-height: 536px;
-    height: 100%;
+    // max-height: 536px;
+    // height: 100%;
     background: #fff;
     border-radius: 10px;
     z-index: 6;
@@ -27,10 +27,16 @@
     max-width: 306px;
     width: 100%;
     margin-right: 50px; 
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
 }
 .textSide{
     max-width: 388px;
     width: 100%;  
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 .form{
     width: 100%;
@@ -39,9 +45,26 @@
     align-items: center;
     justify-content: center;
 }
+.commit{
+    line-height: 150%;
+}
 .commitTitle, .list{
     font-size: 14px;
     color: #686868;
+    line-height: inherit;
+}
+.commimobil{
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+        font-size: 14px;
+        margin-top: 20px;
+        font-weight: 700;
+        color: #686868;
+        line-height: inherit;  
+        border-bottom: 1px solid #686868;
+        cursor: pointer;
+    }
 }
 .listItem{
     position: relative;
@@ -63,7 +86,12 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 30px;
-
+}
+.listNone{
+    display: none;
+}
+.list{
+    margin-top: 10px;
 }
 .subtitle{
     font-size: 14px;
@@ -78,11 +106,12 @@
     border-radius: 30px;
     margin-bottom: 20px;
     width: 100%;
+    font-size: 16px;
 
     
     &:placeholder{
         color: #686868;
-        font-size: 14px;
+        font-size: 16px;
     }
     &:focus{
         outline: 3px #6540CD solid;
@@ -168,23 +197,6 @@
         width: 20px;
         height: 20px;
         background-image: url(../../../../public/assets/svg/password1.svg);
-        background-repeat: no-repeat;
-        z-index: 5;
-    }
-}
-.passwordOnFocuse{
-    position: relative;
-    width: 100%;
-
-
-    &::before{
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 20px;
-        width: 20px;
-        height: 20px;
-        background-image: url(../../../../public/assets/svg/password2.svg);
         background-repeat: no-repeat;
         z-index: 5;
     }
@@ -319,6 +331,15 @@
     font-size: 14px;
     color: #686868;
     margin-top: 50px;
+
+    &None{
+    @media (min-width: 768px) {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        margin-top: 25px;
+    }
+    }
 }
 
 .askLink{
@@ -351,3 +372,5 @@
         }
 
 }
+
+
